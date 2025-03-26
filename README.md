@@ -14,10 +14,13 @@ This chatbot uses web scraping to gather information about Able from their websi
 - Streamlit-based user interface for easy interaction
 - Conversational memory to maintain context
 
-## Setup Instructions
+## 🔧 Setup Instructions
+##Ensure you have:
+- Python 3.8 or higher installed
 
-1. Clone this repository
-2. Install dependencies:
+### 1. 
+-  Clone this repository
+### 2. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
