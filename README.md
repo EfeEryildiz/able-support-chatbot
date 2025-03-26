@@ -54,3 +54,12 @@ This chatbot uses web scraping to gather information about Able from their websi
 - "What industries has Able worked with?"
 - "What is Able's mission?"
 - "Where is Able located?"
+
+## Demo Video
+
+[👉 Watch the 3-minute walkthrough here](link)
+
+## Author
+
+**Efe Eryildiz**  
+[GitHub](https://github.com/EfeEryildiz) • [LinkedIn](https://linkedin.com/in/efe-e-44962715b)
