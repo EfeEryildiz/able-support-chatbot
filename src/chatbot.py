@@ -90,7 +90,12 @@ class AbleSupportChatbot:
     def _generate_response(self, query: str, context: str) -> str:
         """Generate a response using OpenAI API with the provided context"""
         try:
+            # Try fallback response if:
+            # 1. No API key is set, or
+            # 2. It's the default API key, or
+            # 3. We're in test/demo mode
             if not OPENAI_API_KEY or OPENAI_API_KEY == "your_api_key_here":
+                print("No API key set, using fallback responses")
                 return self._get_fallback_response(query)
             
             # Set up messages for the API
@@ -142,23 +147,45 @@ class AbleSupportChatbot:
         # Simple keyword matching fallback system
         query_lower = query.lower()
         
-        if "what does able do" in query_lower or "services" in query_lower:
-            return "Able is a full-service digital product agency that partners with funded startups and established brands to build innovative, user-focused digital products."
+        # Main company information
+        if "what does able do" in query_lower or "services" in query_lower or "what is able" in query_lower:
+            return "Able is a full-service digital product agency that partners with funded startups and established brands to build innovative, user-focused digital products. We provide end-to-end services from strategy and discovery through design, development, and growth."
         
-        elif "teams" in query_lower:
-            return "Able has multidisciplinary teams across several key areas: Product Management, Design, Engineering, and Strategy."
+        # Team information
+        elif "teams" in query_lower or "who works" in query_lower or "employees" in query_lower:
+            return "Able has multidisciplinary teams across several key areas: Product Management, Design, Engineering, and Strategy. Our teams collaborate closely with clients as true partners throughout the product development lifecycle."
         
-        elif "industries" in query_lower:
-            return "Able works across various industries including fintech, healthcare, education, media, retail, and enterprise software."
+        # Industry information
+        elif "industries" in query_lower or "clients" in query_lower or "sectors" in query_lower:
+            return "Able works across various industries including fintech, healthcare, education, media, retail, and enterprise software. We've built payment platforms, telemedicine solutions, learning management systems, content delivery platforms, and more."
         
-        elif "mission" in query_lower:
-            return "Able's mission is to help organizations transform their ideas into exceptional digital products that create value for users and drive business growth."
+        # Mission information
+        elif "mission" in query_lower or "values" in query_lower or "purpose" in query_lower:
+            return "Able's mission is to help organizations transform their ideas into exceptional digital products that create value for users and drive business growth. We believe in user-centered design, technical excellence, and true partnership with our clients."
         
-        elif "located" in query_lower or "location" in query_lower:
-            return "Able is headquartered in New York City, with team members distributed across the United States and globally."
+        # Location information
+        elif "located" in query_lower or "location" in query_lower or "where" in query_lower or "office" in query_lower:
+            return "Able is headquartered in New York City, with team members distributed across the United States and globally. Our global presence allows us to work with clients around the world and build diverse teams with varied perspectives."
         
+        # Website information
+        elif "website" in query_lower or "url" in query_lower or "site" in query_lower:
+            return "Able's official website is available at https://able.co. You can find more information about our services, case studies, and team there."
+        
+        # Contact information
+        elif "contact" in query_lower or "email" in query_lower or "phone" in query_lower or "reach" in query_lower:
+            return "You can contact Able through their website at https://able.co/contact. They also have a presence on social media platforms such as LinkedIn, Twitter, and Instagram."
+        
+        # Process information
+        elif "process" in query_lower or "methodology" in query_lower or "approach" in query_lower:
+            return "Able follows a collaborative, iterative approach to product development that typically includes discovery and strategy, design, engineering, testing, and deployment phases. We emphasize close client collaboration throughout the process."
+        
+        # Technology information
+        elif "technology" in query_lower or "tech stack" in query_lower or "programming" in query_lower or "languages" in query_lower:
+            return "Able's engineering teams work with various technologies including React, React Native, Node.js, Python, and more. We select the appropriate technology stack based on each project's specific requirements and client needs."
+        
+        # General fallback
         else:
-            return "I'm the Able support chatbot. I can answer questions about Able's services, teams, industries we work with, our mission, and locations. How can I help you today?"
+            return "I'm the Able support chatbot. I can answer questions about Able's services, teams, industries, mission, technologies, locations, and more. How can I help you today?"
     
     def get_chat_history(self) -> List[Dict[str, str]]:
         """Get the conversation history for display"""
