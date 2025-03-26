@@ -17,22 +17,28 @@ This chatbot uses web scraping to gather information about Able from their websi
 ## 🔧 Setup Instructions
 ### Ensure you have:
 - Python 3.8 or higher installed
+- An OpenAI API key
 
-### 1. 
--  Clone this repository
+### 1. Clone this repository 
+
 ### 2. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
-3. Create a `.env` file with your OpenAI API key:
+### 3. Create a `.env` file with your OpenAI API key:
    ```
    OPENAI_API_KEY=your_api_key_here
    ```
-4. Run the scraper to collect data (if needed):
+
+## 🧠 Prepare the Knowledge Base
+
+### 4. Run the scraper to collect data (if needed):
    ```
    python -m src.scraper
+   python -m src.data_processor
+   python -m src.embeddings
    ```
-5. Launch the application:
+### 5. Launch the application:
    ```
    streamlit run app.py
    ```
