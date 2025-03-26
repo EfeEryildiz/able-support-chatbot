@@ -75,7 +75,7 @@ Open your browser and go to:
 
 ---
 
-## 📦 Bonus CLI Tip
+## 📦 CLI Tip
 
 To launch the app quickly:
 ```bash
