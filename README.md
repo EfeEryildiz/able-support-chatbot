@@ -15,7 +15,7 @@ This chatbot uses web scraping to gather information about Able from their websi
 - Conversational memory to maintain context
 
 ## 🔧 Setup Instructions
-##Ensure you have:
+### Ensure you have:
 - Python 3.8 or higher installed
 
 ### 1. 
