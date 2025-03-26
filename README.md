@@ -82,7 +82,7 @@ To launch the app quickly:
 echo "To run the Able Support Chatbot, use the command: streamlit run app.py"
 ```
 
-## Project Structure
+## 🧱 Project Structure
 
 - `data/`: Contains raw and processed data from Able's website
 - `src/`: Source code for the chatbot functionality
@@ -95,7 +95,7 @@ echo "To run the Able Support Chatbot, use the command: streamlit run app.py"
 - `app.py`: Streamlit application
 - `requirements.txt`: Project dependencies
 
-## Demo Video
+## 📹 Demo Video
 
 [👉 Watch the 3-minute walkthrough here](link)
 
